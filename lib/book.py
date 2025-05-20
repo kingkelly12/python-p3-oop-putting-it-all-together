@@ -1,17 +1,21 @@
-#!/usr/bin/env python3
+# This is a Python module that defines a Book class.
 
 class Book:
-    def __init__(self, title, author, year):
+    def __init__(self, title, page_count):
         self.title = title
-        self.author = author
-        self.year = year
-        
-        print(f"Book '{self.title}' by {self.author} ({self.year}) created.")
-        
-    def __repr__(self):
-        return f"Book({self.title!r}, {self.author!r}, {self.year!r})"
-        
-    def __str__(self):
-        return f"{self.title} by {self.author} ({self.year})"
-    
-        
+        self.page_count = page_count
+
+    @property
+    def page_count(self):
+        return self._page_count
+
+    @page_count.setter
+    def page_count(self, value):
+        if isinstance(value, int):
+            self._page_count = value
+        else:
+            print("page_count must be an integer")
+
+    def turn_page(self):
+        print("Flipping the page...wow, you read fast!")
+

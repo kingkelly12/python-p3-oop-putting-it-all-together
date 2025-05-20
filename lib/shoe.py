@@ -1,16 +1,22 @@
-#!/usr/bin/env python3
+# This is a simple Python module that defines a Shoe class.
 
 class Shoe:
-    def __init__(self, brand, size, color):
+    def __init__(self, brand, size):
         self.brand = brand
         self.size = size
-        self.color = color
-        
-        print(f"Shoe '{self.brand}' of size {self.size} and color {self.color}")
-        
-    def __repr__(self):
-        return f"Shoe({self.brand!r}, {self.size!r}, {self.color!r})"
-        
-    def __str__(self):
-        return f"{self.brand} shoe of size {self.size} in {self.color} color"
-    
+        self.condition = None
+
+    @property
+    def size(self):
+        return self._size
+
+    @size.setter
+    def size(self, value):
+        if isinstance(value, int):
+            self._size = value
+        else:
+            print("size must be an integer")
+
+    def cobble(self):
+        print("Your shoe is as good as new!")
+        self.condition = "New"
