@@ -1,10 +1,8 @@
-# This is a simple Python module that defines a Shoe class.
-
 class Shoe:
     def __init__(self, brand, size):
         self.brand = brand
-        self.size = size
-        self.condition = None
+        self._size = None
+        self.size = size  # uses setter
 
     @property
     def size(self):
@@ -20,3 +18,4 @@ class Shoe:
     def cobble(self):
         print("Your shoe is as good as new!")
         self.condition = "New"
+    pass
