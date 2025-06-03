@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 from shoe import Shoe
 
 import io
